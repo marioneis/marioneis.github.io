@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina da Rafaela</title>
+</head>
+<body>
+    <h1>Bem-vindo à minha página!</h1>
+    <p>Nesta página, você pode preencher um formulário. Ele vai te dizer se você é velho ou não. </p>
+    <img src="https://emojigraph.org/media/facebook/face-holding-back-tears_1f979.png" alt="Gif animado" width="300">
+    <p>Por favor, insira seu nome e idade abaixo:</p>
+
+    <form id="meuFormulario" method="get">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome">
+        <label for="idade">Digite sua idade:</label>
+        <input type="text" id="idade" name="idade">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Pega o elemento do formulário pelo ID
+        const formulario = document.getElementById('meuFormulario');
+
+        // Adiciona um evento para escutar quando o botão de envio for acionado
+        formulario.addEventListener('submit', function(evento) {
+            // Impede a página de recarregar ao enviar o formulário
+            evento.preventDefault();
+
+            // Pega o valor digitado no input
+            const valorInput = document.getElementById('nome').value;
+            const valorIdade = document.getElementById('idade').value;
+
+            if (valorIdade >120){
+                alert('Meus Deus! Como você é velha!!!.');
+                return;
+            } else {
+                alert('Olá, ' + valorInput + '! Sua idade é ' + valorIdade + ' anos.' + '\n' + 'Você é jovem! Aproveite a vida ao máximo!');                
+                return;
+            }
+           
+            // Mostra o alerta com o valor
+            
+        });
+    </script>
+
+</body>
+</html>
+
